@@ -105,14 +105,6 @@ uint16_t getSLEEP_SEC_RGB(void){
     #endif
 }
 
-uint16_t getSLEEP_MS(void){
-    #ifdef  SLEEP_MS
-        return SLEEP_MS;
-    #else
-        return 500;
-    #endif
-}
-
 
 bool power_pin_enable(void){
     #if defined(POWER_PIN)
@@ -239,18 +231,6 @@ uint8_t getRADIO_LED_INDEX(void) {
    return RADIO_LED_INDEX;
 }
 
-
-uint8_t useVBat(void) {
-
-    #if defined (USE_VBAT)
-        return 1;
-     #else
-        return 0;
-     #endif
-
-}
-
-
 pin_t get_handwire_detect_pin(void){
     return HAND_WIRE_DETECT;
 }
@@ -316,17 +296,6 @@ void bootloader_jump(void){
 extern void matrix_scan_user_qf(void);
 
 
-void matrix_scan_user_self(void) {
-
-}
-
 void matrix_scan_user(void) {
     matrix_scan_user_qf();
-    matrix_scan_user_self();
-}
-
-
-void go_bl_dfu_ble(void){
-    xprintf("go blue tooth dfu ..../n");
-    uartSendByAction(KB_BLE_DFU);
 }

@@ -12,7 +12,6 @@
 
 #define UNPAIRCODE 0x04
 #define RESET_CODE 0x05
-#define ADC_DISPALY_CODE 0x06
 
 
 #define CHANNAL_001 0x07
@@ -21,10 +20,6 @@
 #define CHANNAL_RADIO 0x0A
 #define MUL_MEDIA 0x0B
 #define KB_SYSTEM 0x0C
-#define KB_BATTERY 0x0D
-#define KB_RADIO_DFU 0x0E
-#define KB_BLE_DFU 0xBB
-#define MOURSE_NR 0x11
 
 
 pin_t get_CHANNEL0_LED_PIN_pin(void);
@@ -57,10 +52,6 @@ void setWKPin_high(void);
 void setWKPin_low(void);
 uint8_t readWKPin(void);
 uint8_t read_POWER_LED(void);
-uint8_t useVBat(void);
-
-void turn_adc_off(void);
-u16 get_max_adc_val(void);
 
 uint8_t getCAPS_LED_INDEX(void);
 uint8_t getBLE1_LED_INDEX(void);
@@ -70,9 +61,6 @@ uint8_t getRADIO_LED_INDEX(void);
 uint16_t get_RGBLED_NUM(void);
 uint16_t getSLEEP_SEC_RGB(void);
 
-pin_t get_adc_pin(void);
-
-void adc_stop_qf(pin_t pin);
 void process_LED_status(void);
 void rgb_power_enable(bool enable);
 
@@ -87,5 +75,3 @@ uint32_t* get_col_pins(void);
 uint8_t get_row_length(void);
 uint8_t get_col_length(void);
 
-void go_bl_dfu_ble(void);
-uint16_t getSLEEP_MS(void);
